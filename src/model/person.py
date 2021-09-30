@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.expression import true
+import role
 
 Base = declarative_base()
 
@@ -11,7 +12,7 @@ class Persons(Base):
     id = Column(Integer, primary_key=True, autoincrement=true)
     first_name = Column(String)
     last_name = Column(String)
-    role = Column(String)
+    role_id = Column(Integer)
 
     def __init__(self, first_name, last_name, role) -> None:
         self.first_name = first_name
