@@ -1,15 +1,11 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.sql.expression import true
-import role
-
-Base = declarative_base()
+from fastapi_framework import database
 
 
-class Persons(Base):
+class Persons(database.Base):
     __tablename__ = 'persons'
 
-    id = Column(Integer, primary_key=True, autoincrement=true)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     first_name = Column(String)
     last_name = Column(String)
     role_id = Column(Integer)
